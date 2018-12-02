@@ -1,0 +1,17 @@
+reflar-cookie-consent:
+  admin:
+    settings:
+      title: Reflar Cookie Consent
+      consentText: Content Message
+      buttonText: Dismiss Button Text
+      learnMoreLinkText: Learn More Text
+      learnMoreLinkUrl: Learn More URL
+      ccTheme: Popup Theme
+      backgroundColor: Popup Background
+      buttonBackgroundColor: Dismiss Button Background
+
+      themes:
+        blocky: Blocky
+        edgeless: Edgeless
+        classic: Classic
+        custom: Custom
