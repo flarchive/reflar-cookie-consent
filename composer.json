@@ -1,0 +1,86 @@
+{
+    "name": "fof/cookie-consent",
+    "description": "Customizable cookie consent notice",
+    "keywords": [
+        "extension",
+        "flarum",
+        "partialdev",
+        "customizable",
+        "cookie",
+        "consent"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "FoF Team",
+            "email": "team@friendsofflarum.org"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/friendsofflarum/cookie-consent/issues",
+        "source": "https://github.com/friendsofflarum/cookie-consent",
+        "forum": "https://discuss.flarum.org/d/10395"
+    },
+    "homepage": "https://friendsofflarum.org",
+    "funding": [
+        {
+            "type": "website",
+            "url": "https://opencollective.com/fof/donate"
+        }
+    ],
+    "require": {
+        "flarum/core": "^2.0.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "replace": {
+        "reflar/cookie-consent": "*"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "FoF Cookie Consent",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-cookie",
+                "backgroundColor": "#e74c3c",
+                "color": "#FFF"
+            }
+        },
+        "flagrow": {
+            "discuss": "https://discuss.flarum.org/d/10395"
+        },
+        "flarum-cli": {
+            "modules": {
+                "githubActions": true
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "FoF\\CookieConsent\\": "src/"
+        }
+    },
+    "require-dev": {
+        "flarum/phpstan": "^2.0.0",
+        "flarum/testing": "^2.0.0"
+    },
+    "scripts": {
+        "analyse:phpstan": "phpstan analyse",
+        "clear-cache:phpstan": "phpstan clear-result-cache",
+        "test": [
+            "@test:unit",
+            "@test:integration"
+        ],
+        "test:unit": "phpunit -c tests/phpunit.unit.xml",
+        "test:integration": "phpunit -c tests/phpunit.integration.xml",
+        "test:setup": "@php tests/integration/setup.php"
+    },
+    "scripts-descriptions": {
+        "analyse:phpstan": "Run static analysis",
+        "test:unit": "Runs all unit tests.",
+        "test:integration": "Runs all integration tests.",
+        "test:setup": "Sets up a database for use with integration tests. Execute this only once.",
+        "test": "Runs all tests."
+    }
+}
